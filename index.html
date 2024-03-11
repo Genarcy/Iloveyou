@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .love-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .love-text {
+            text-transform: uppercase;
+            font-size: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+        .love {
+            animation: love-animation infinite linear;
+        }
+        @keyframes love-animation {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="love-container">
+        <div class="love-text">
+            <span>I LOVE</span>
+            <span class="love" id="love"></span>
+            <span>YOU</span>
+        </div>
+    </div>
+
+    <script>
+        var love = document.getElementById('love');
+        var infiniteLove = 'E';
+
+        function updateLoveText() {
+            infiniteLove += 'E';
+            love.textContent = infiniteLove;
+        }
+
+        setInterval(updateLoveText, 50);
+    </script>
+</body>
+</html>
