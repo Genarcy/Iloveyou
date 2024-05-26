@@ -47,19 +47,17 @@
 <body>
     <div class="love-container">
         <div class="love-text">
-            <span>I LOVE</span>
-            <span class="love" id="love"></span>
+            <span id="love">I LOVE</span>
+            <span class="love"></span>
             <span>YOU</span>
         </div>
     </div>
 
     <script>
         var love = document.getElementById('love');
-        var infiniteLove = 'E';
 
         function updateLoveText() {
-            infiniteLove += 'E';
-            love.textContent = infiniteLove;
+            love.innerHTML += 'E';
         }
 
         setInterval(updateLoveText, 50);
